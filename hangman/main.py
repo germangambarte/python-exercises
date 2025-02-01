@@ -1,7 +1,7 @@
 import os
 
-total_lifes = 6
-lifes_consumed = 0
+total_lives = 6
+lives_consumed = 0
 wins = False
 draw = [
     "\t   ************\n\t   |          *\n\t              *\n\t              *\n\t              *\n\t            *****\n\t          *********\n",
@@ -30,9 +30,9 @@ inputs = []
 def print_stats():
     print("hoi")
     print(end="\n")
-    print(f"Vidas restantes: {total_lifes - lifes_consumed}")
+    print(f"Vidas restantes: {total_lives - lives_consumed}")
     print(end="\n")
-    print(draw[lifes_consumed])
+    print(draw[lives_consumed])
     print(progression)
     print(end="\n")
 
@@ -53,7 +53,7 @@ def valid(letter):
     return True
 
 
-while lifes_consumed < total_lifes and not wins:
+while lives_consumed < total_lives and not wins:
     letter = input("Ingrese una letra: ").upper()
 
     if not valid(letter):
@@ -64,7 +64,7 @@ while lifes_consumed < total_lifes and not wins:
     if word.__contains__(letter):
         append_letters(letter)
     else:
-        lifes_consumed += 1
+        lives_consumed += 1
     
     print_stats()
     if progression.count("_") == 0:
